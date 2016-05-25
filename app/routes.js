@@ -10,10 +10,14 @@ module.exports = function(app) {
 		Todo.find(function(err, todos) {
 
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
-			if (err)
+			if (err) {
+				console.log("ERROR!");
 				res.send(err)
+			}
 
-			res.json(todos); // return all todos in JSON format
+			else {
+				res.json(todos); // return all todos in JSON format
+			}
 		});
 	});
 
